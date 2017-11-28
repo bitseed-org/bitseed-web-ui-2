@@ -4,7 +4,7 @@
 
 #dependencies
 sudo apt-get update
-sudo apt-get -y install apache2 libapache2-mod-php php-mysql php-curl php-mcrypt dnsutils ntp
+sudo apt-get -y install apache2 libapache2-mod-php php-mysql php-curl php-mcrypt dnsutils ntp python
 
 #set serial number
 echo "Enter device serial number:"
