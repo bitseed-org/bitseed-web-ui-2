@@ -19,6 +19,8 @@ import json
 
 def ip_mac():
 
+    homedir = "/home/bitcoin/" 
+
     command = "ifconfig"
     proc = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True)
     (out, err) = proc.communicate()
@@ -33,8 +35,8 @@ def ip_mac():
     temp = 	words[1].split(':')
     inet_address = temp[1]	
 
-    # Date of last backup - Taken from bak.log in /home/linaro
-    command = "cat /home/linaro/bak.log"
+    # Date of last backup
+    command = "cat " + homedir + "bak.log"
     proc = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True)
     (out, err) = proc.communicate()
     s = out.split("\n")
