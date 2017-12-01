@@ -49,7 +49,10 @@ $check_server = $wallet->ping($scheme, $server_ip, $server_port);
 if ( $check_server == '' || empty($check_server) ) {
 die (' The bitcoind server located at '. $scheme.'://'.$server_port.' on Port:['.$server_port.'] appears to be unresponsive.');
 }
-$check_login = $wallet->rpc($scheme,$server_ip,$server_port,$rpc_user,$rpc_pass,'getinfo') ;
+// $check_login = $wallet->rpc($scheme,$server_ip,$server_port,$rpc_user,$rpc_pass,'getinfo') ;
+$check_login = $wallet->rpc($scheme,$server_ip,$server_port,$rpc_user,$rpc_pass,'getnetworkinfo') ;
+// $test_result = print_r($check_login, true);
+// fwrite($handle, "$test_result");
 if ( !is_array($check_login) ) {
 die (' At startup, Bitcoin requires 10-15 minutes to check its database and the web UI can be active. Please wait 10-15 minutes. If the web UI never responds, check that the RPC Username and Password are tha same in ~.bitcoin/bitcoin.conf and /var/www/html/config.inc.php are the same');
 }

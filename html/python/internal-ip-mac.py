@@ -21,19 +21,19 @@ def ip_mac():
 
     homedir = "/home/bitcoin/" 
 
-    command = "ifconfig"
+    command = "ip addr show"
     proc = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True)
     (out, err) = proc.communicate()
 
-	# MAC Address
+    # MAC Address
     s = out.split("\n")
-    words = s[0].split()
-    mac_address = words[4]
+    words = s[7].split()
+    mac_address = words[1] 
 
-    # INET
-    words = s[1].split()
-    temp = 	words[1].split(':')
-    inet_address = temp[1]	
+    # Internal IP
+    words = s[8].split()
+    temp = words[1].split('/')
+    inet_address = temp[0]	
 
     # Date of last backup
     command = "cat " + homedir + "bak.log"
@@ -42,8 +42,11 @@ def ip_mac():
     s = out.split("\n")
     s.pop()
     s = s[-1]
-    db_date = s.split(" ")
-    db_date = " ".join(db_date[3:])
+    if s == 'new':
+        db_date = "new"
+    else:
+        db_date = s.split(" ")
+        db_date = " ".join(db_date[3:])
 
     return_values = {"inet_address": inet_address, "mac_address": mac_address,
 	                 "db_date": db_date}

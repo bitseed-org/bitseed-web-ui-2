@@ -50,7 +50,8 @@ fclose ($file_logger);
 	<div class="div_WalletOverview">
         <div class="ui-grid-a">
             <div class="ui-block-a"><span class="primary">Device at Block:</span></div>
-            <div class="ui-block-b"><span class="secondary_light"><?php print $check_login['blocks']; ?>&nbsp;</span></div>
+            <!-- <div class="ui-block-b"><span class="secondary_light"><?php // print $check_login['blocks']; ?>&nbsp;</span></div> -->
+            <div class="ui-block-b"><span class="secondary_light"><?php print $chaininfo['blocks']; ?>&nbsp;</span></div>
         </div>
     </div>
 		
@@ -64,7 +65,8 @@ fclose ($file_logger);
     <div class="div_WalletOverview">
         <div class="ui-grid-a">
             <div class="ui-block-a"><span class="primary">Peer Connections:</span></div>
-            <div class="ui-block-b"><span class="secondary_light"><?php print $check_login['connections']; ?></span></div>
+            <!-- <div class="ui-block-b"><span class="secondary_light"><?php //print $check_login['connections']; ?></span></div> -->
+            <div class="ui-block-b"><span class="secondary_light"><?php print $netinfo['connections']; ?></span></div>
         </div>
     </div>
 
