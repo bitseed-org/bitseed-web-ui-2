@@ -29,7 +29,7 @@ fclose ($file_logger);
 	<div class="div_WalletOverview">
         <div class="ui-grid-a">
             <div class="ui-block-a"><span class="primary">Device at Block:</span></div>
-            <div class="ui-block-b"><span class="secondary_light"><?php print $check_login['blocks']; ?>&nbsp;</span></div>
+            <div class="ui-block-b"><span class="secondary_light"><?php print $chaininfo['blocks']; ?>&nbsp;</span></div>
         </div>
     </div>
 		
@@ -43,7 +43,7 @@ fclose ($file_logger);
     <div class="div_WalletOverview">
         <div class="ui-grid-a">
             <div class="ui-block-a"><span class="primary">Peer Connections:</span></div>
-            <div class="ui-block-b"><span class="secondary_light"><?php print $check_login['connections']; ?></span></div>
+            <div class="ui-block-b"><span class="secondary_light"><?php print $netinfo['connections']; ?></span></div>
         </div>
     </div>
 
@@ -57,7 +57,7 @@ fclose ($file_logger);
     <div class="div_WalletOverview">
         <div class="ui-grid-a">
             <div class="ui-block-a"><span class="primary">Minimum Relay Fee:</span></div>
-            <div class="ui-block-b"><span class="secondary_light"><?php printf ('%.08lf', $check_login['relayfee']); ?></span></div>
+            <div class="ui-block-b"><span class="secondary_light"><?php printf ('%.08lf', $netinfo['relayfee']); ?></span></div>
         </div>
     </div>	
 
@@ -82,10 +82,16 @@ fclose ($file_logger);
         </div>
     </div>
 
+        <?php
+        // Convert the bitseedervs from xxx format to x.x.x format per Jay's request
+            $bitseedvers_ui = substr($bitseedvers, 0, 1).'.'.substr($bitseedvers, 1, 2);
+            $bitseedvers_ui = substr($bitseedvers_ui, 0, 3).'.'.substr($bitseedvers, 2, 3);
+        ?>
+
     <div class="div_WalletOverview">
         <div class="ui-grid-a">
             <div class="ui-block-a"><span class="primary">Device Version:</span></div>
-            <div class="ui-block-b"><span class="secondary_light"><?php print $bitseedvers; ?></span></div>
+            <div class="ui-block-b"><span class="secondary_light"><?php print $bitseedvers_ui; ?></span></div>
         </div>
     </div>
 

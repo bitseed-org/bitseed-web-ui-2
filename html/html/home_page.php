@@ -80,7 +80,7 @@ fclose ($file_logger);
     <div class="div_WalletOverview">
         <div class="ui-grid-a">
             <div class="ui-block-a"><span class="primary">Minimum Relay Fee:</span></div>
-            <div class="ui-block-b"><span class="secondary_light"><?php printf ('%.08lf', $check_login['relayfee']); ?></span></div>
+            <div class="ui-block-b"><span class="secondary_light"><?php printf ('%.08lf', $netinfo['relayfee']); ?></span></div>
         </div>
     </div>	
 
