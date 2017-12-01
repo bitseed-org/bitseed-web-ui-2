@@ -1,6 +1,5 @@
 <?php
 
-$handle = fopen("test1.txt", "w");
 $HOME = "/home/bitcoin";
 $extwebport_default=80; 
 

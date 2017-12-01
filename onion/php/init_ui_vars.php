@@ -1,13 +1,8 @@
 <?php
-// -------------------------------------------------------------------------
-// Bitnodes registration requires a web page with the registered 
-// bitcoin address on it. The defaualt port is 80 if the user does not
-// specify one.
-// -------------------------------------------------------------------------
-$extwebport_default=80; 
+$HOME = "/home/bitcoin";
+$extwebport_default=80;
 
 // Internal IP, MAC address
-// $inet_mac_values = shell_exec('/home/linaro/internal-ip-mac.py 2>&1');
 $inet_mac_values = shell_exec('python/internal-ip-mac.py 2>&1');
 $inet_mac_addr = json_decode($inet_mac_values, TRUE);
 
@@ -17,33 +12,14 @@ $device_stats = json_decode($device_values, TRUE);
 $extip = file_get_contents('http://ipecho.net/plain');
 $extipport = $extip . "-8333";
 $concensusblock = file_get_contents('https://blockchain.info/q/getblockcount');
-$address = trim(file_get_contents('/home/linaro/reward-addr'));
-//$address = file_get_contents('/home/linaro/reward-addr');
+$address = trim(file_get_contents("$HOME/reward-addr"));
 
-$jsnaddr = "https://getaddr.bitnodes.io/api/v1/nodes/{$extip}-8333";
-$bitnodejson = file_get_contents($jsnaddr);
-$bitnode = json_decode($bitnodejson, TRUE);
-
-// ------------------ DEBUGGING -------------------
-$file_logger = fopen ("bitnodes_verified.log", "w");
-$a = $bitnode['verified'];
-fwrite ($file_logger, "bitnode_verified= $a");
-fclose ($file_logger);
-// ------------------ DEBUGGING -------------------
-
-$serial = file_get_contents('/var/www/html/serial');
-$bitseedvers = file_get_contents('/home/linaro/version');
+$serial = file_get_contents('serial');
+$bitseedvers = file_get_contents("$HOME/version");
 $wallet = new PhpBitAdmin_Wallet();
 $chaininfo = $wallet->rpc($scheme,$server_ip,$server_port,$rpc_user,$rpc_pass,'getblockchaininfo') ;
 $meminfo = $wallet->rpc($scheme,$server_ip,$server_port,$rpc_user,$rpc_pass,'getmempoolinfo') ;
 $netinfo = $wallet->rpc($scheme,$server_ip,$server_port,$rpc_user,$rpc_pass,'getnetworkinfo') ;
-$intip = $inet_mac_addr['inet_address'];
-$sn = (int)$serial;
-$status = array ( "sn" => $sn, "ip" => $intip );
-$statusjson = json_encode($status);
-$stat = 'status.json' ;
-file_put_contents($stat, $statusjson) ;
-
 if ( (empty($_SESSION['PHPBITADMIN'])) || ($_SESSION['PHPBITADMIN'] === null) ) { // check if $_SESSION is set.
 $session = $wallet->setSession($scheme, $server_ip, $server_port, $rpc_user, $rpc_pass, $btc_addr, $p_phrase);
 } else {
@@ -54,9 +30,9 @@ $check_server = $wallet->ping($scheme, $server_ip, $server_port);
 if ( $check_server == '' || empty($check_server) ) {
 die (' The bitcoind server located at '. $scheme.'://'.$server_port.' on Port:['.$server_port.'] appears to be unresponsive.');
 }
-$check_login = $wallet->rpc($scheme,$server_ip,$server_port,$rpc_user,$rpc_pass,'getinfo') ;
-if ( !is_array($check_login) ) {
+if ( !is_array($netinfo) ) {
 die (' At startup, Bitcoin requires 10-15 minutes to check its database and the web UI can be active. Please wait 10-15 minutes. If the web UI never responds, check that the RPC Username and Password are tha same in ~.bitcoin/bitcoin.conf and /var/www/html/config.inc.php are the same');
+
 }
 }
 ?>
