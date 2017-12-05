@@ -142,6 +142,5 @@ $("#bitcoinconf_form").submit(function( e ) {
 });
 // -----------------------------------------------------------------
 </script>
-Hello
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
 
-$HOME = "/home/linaro";
+$HOME = "/home/bitcoin";
 $BTC_DIR = "$HOME/.bitcoin";
 
 // Values submitted from client-side form

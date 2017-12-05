@@ -5,8 +5,8 @@ File;    dev_bcupdate_page.php
 Date:    05/15/2016
 
 Purpose: The Bitcoin Configuration page allows the user to read and write values from/to 
-         the bitcoin and bitseed configuration files,  /home/linaro/.bitcoin/bitcoin.conf and 
-		 /home/linaro/.bitseed/bitseed.conf files.  
+         the bitcoin and bitseed configuration files,  $HOME/.bitcoin/bitcoin.conf and 
+		 $HOME/.bitseed/bitseed.conf files.  
 
 		 The values are modified by means of checkboxes and sliders. Bitcoin needs to restart 
 		 anytime the configuration values change for the new values to take effect.  

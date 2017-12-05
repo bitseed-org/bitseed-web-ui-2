@@ -19,10 +19,11 @@ Originally forked from https://gitub.com mpatterson99/phpBitAdmin-Bitcoin-HTML5-
 -------------------------------------------------------------------------------------->
 
 <?php
-$fh_log = fopen ("/home/linaro/test_log", "w+");
-fwrite ($fh_log, "hello");
+// $fh_log = fopen ("/home/linaro/test_log", "w+");
+$HOME = "/home/bitcoin";
+$fh_log = fopen ("$HOME/test_log", "w+");
+fwrite ($fh_log, "*** hello *** \n");
 fclose ($fh_log);
-$HOME = "/home/linaro";
 
 $full_chkbox_array = ['autoupdate', 'listenonion', 
 		              'onlynet', 'upnp', 'disablebackups'];
@@ -59,8 +60,7 @@ for ($i = 0; $i < count($full_chkbox_array); $i++) {
 // Add sliders to $params_new
 $slider_array = array(
 				'minrelaytxfee' => $minrelaytxfee,
-				'maxuploadtarget' => $maxuploadtarget,
-				'maxmempool' => $maxmempool
+				'maxuploadtarget' => $maxuploadtarget, 'maxmempool' => $maxmempool
 				);
 
 $params_new = array_merge($chkbox_values, $slider_array);
@@ -109,9 +109,9 @@ $fh = fopen ("$HOME/wr_bconf_mbox", "w");
 fwrite ($fh, $json_object); 
 fclose ($fh);
 
-$fh = fopen ("/home/linaro/wr_bconf_flag", "w+");
+$fh = fopen ("$HOME/wr_bconf_flag", "w+");
    if ($fh) {
-                shell_exec ('echo "1" > /home/linaro/wr_bconf_flag');
+                fwrite ($fh, "1");
    }
 fclose ($fh);
 
