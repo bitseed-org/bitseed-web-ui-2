@@ -1,6 +1,6 @@
 <?php
     if(!session_id()) session_start();
-    $HOME = $_SESSION['HOME'];
+    $HOME = trim($_SESSION['HOME']);
     // $HOME = "/home/bitcoin";
     global $param, $max_peers, $minrelaytxfee, $limitfreerelay;
 

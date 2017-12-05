@@ -14,7 +14,7 @@ Originally forked from https://gitub.com mpatterson99/phpBitAdmin-Bitcoin-HTML5-
 
 <?php
 if(!session_id()) session_start();
-$HOME = $_SESSION['HOME'];
+$HOME = trim($_SESSION['HOME']);
 // $HOME = "/home/bitcoin";
 $domvalue = $_GET['id'];
 

@@ -12,7 +12,7 @@ Originally forked from https://gitub.com mpatterson99/phpBitAdmin-Bitcoin-HTML5-
 <?php
 
 if(!session_id()) session_start();
-$HOME = file_get_contents('user_home');
+$HOME = trim(file_get_contents('user_home'));
 if(!isset($_SESSION['HOME'])) {
     $_SESSION['HOME'] = $HOME;
 }

@@ -24,7 +24,7 @@ Originally forked from https://gitub.com mpatterson99/phpBitAdmin-Bitcoin-HTML5-
 // $HOME = "/home/bitcoin";
 // $HOME = $GLOBALS['HOME'];
 if(!session_id()) session_start();
-$HOME = $_SESSION['HOME'];
+$HOME = trim($_SESSION['HOME']);
 
 $fh_log = fopen ("$HOME/test_log", "w+");
 fwrite ($fh_log, "*** hello *** \n");

@@ -25,14 +25,15 @@ Special note on Tor Enable and onlynet
 
 <?php
    if(!session_id()) session_start();
-   $HOME = $_SESSION['HOME'];
+   $HOME = trim($_SESSION['HOME']);
+   // $HOME = trim($HOME);
    // $HOME = "/home/bitcoin";
 
 // ------------------------------------------------------------------------------------
 // On a page load (any page load), this file checks rd_bconf_flag.  If it is a '0',
 // it will write a '1' to rd_bconf_flag, signalling a read request to the user.
 // ------------------------------------------------------------------------------------
-   $fh_flag = fopen ("$HOME/rd_bconf_flag", "r+") or die ("Unable to open $HOME/rd_bconf_flag");
+   $fh_flag = fopen ("$HOME/rd_bconf_flag", "r+") or die ("Unable to open XX $HOME/rd_bconf_flag");
    if ($fh_flag) {
        if (($line = fgets($fh_flag)) !== false) {
 			   if ($line == 0) {
