@@ -5,7 +5,7 @@
 #  File:          lin_wr_bconf_mbox.py
 #  Date:          01/07/2016
 #
-#  Purpose:       This script resides in /home/linaro and is used 
+#  Purpose:       This script is used 
 #                 to transfer data from wr_bconf_mbox and merge these 
 #                 values into .bitcoin/bitcoin.conf and .bitseed/bitseed.conf
 #                 files.
