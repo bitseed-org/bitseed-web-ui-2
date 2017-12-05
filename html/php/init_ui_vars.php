@@ -11,7 +11,12 @@ Originally forked from https://gitub.com mpatterson99/phpBitAdmin-Bitcoin-HTML5-
 
 <?php
 
-$HOME = "/home/bitcoin";
+if(!session_id()) session_start();
+$HOME = file_get_contents('user_home');
+if(!isset($_SESSION['HOME'])) {
+    $_SESSION['HOME'] = $HOME;
+}
+
 $extwebport_default=80; 
 
 // Internal IP, MAC address

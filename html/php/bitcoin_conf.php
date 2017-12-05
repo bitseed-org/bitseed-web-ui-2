@@ -1,6 +1,7 @@
 <?php
-
-$HOME = "/home/bitcoin";
+if(!session_id()) session_start();
+$HOME = $_SESSION['HOME'];
+// $HOME = "/home/bitcoin";
 $BTC_DIR = "$HOME/.bitcoin";
 
 // Values submitted from client-side form

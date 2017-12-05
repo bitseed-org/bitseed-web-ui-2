@@ -1,6 +1,7 @@
 <?php
-
-    $HOME = "/home/bitcoin";
+    if(!session_id()) session_start();
+    $HOME = $_SESSION['HOME'];
+    // $HOME = "/home/bitcoin";
     global $param, $max_peers, $minrelaytxfee, $limitfreerelay;
 
     // $fh_2 = fopen ("/home/linaro/bconf", "r") or die ("Unable to open bconf file");

@@ -24,8 +24,9 @@ Special note on Tor Enable and onlynet
 -------------------------------------------------------------------------------------->
 
 <?php
-
-   $HOME = "/home/bitcoin";
+   if(!session_id()) session_start();
+   $HOME = $_SESSION['HOME'];
+   // $HOME = "/home/bitcoin";
 
 // ------------------------------------------------------------------------------------
 // On a page load (any page load), this file checks rd_bconf_flag.  If it is a '0',

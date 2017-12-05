@@ -19,8 +19,13 @@ Originally forked from https://gitub.com mpatterson99/phpBitAdmin-Bitcoin-HTML5-
 -------------------------------------------------------------------------------------->
 
 <?php
+// include 'php/init_ui_vars.php';
 // $fh_log = fopen ("/home/linaro/test_log", "w+");
-$HOME = "/home/bitcoin";
+// $HOME = "/home/bitcoin";
+// $HOME = $GLOBALS['HOME'];
+if(!session_id()) session_start();
+$HOME = $_SESSION['HOME'];
+
 $fh_log = fopen ("$HOME/test_log", "w+");
 fwrite ($fh_log, "*** hello *** \n");
 fclose ($fh_log);
