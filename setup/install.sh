@@ -14,10 +14,22 @@ echo $serial > $HOME/"deviceid-$serial"
 #Apache config
 sudo cp $HOME/bitseed-web-ui-2/000-default.conf  /etc/apache2/sites-enabled/
 sudo cp  $HOME/bitseed-web-ui-2/ports.conf  /etc/apache2/
+#private control panel
 sudo cp -r $HOME/bitseed-web-ui-2/html/* /var/www/html
 sudo echo $serial > /var/www/html/serial
 sudo chmod 666 /var/www/html/*.txt
 sudo chown -R www-data:www-data /var/www/html
+#public page
+sudo cp -r $HOME/bitseed-web-ui-2/public/* /var/www/public
+sudo echo $serial > /var/www/public/serial
+sudo chmod 666 /var/www/public/*.txt
+sudo chown -R www-data:www-data /var/www/public
+#onion page
+sudo cp -r $HOME/bitseed-web-ui-2/onion/* /var/www/onion
+sudo echo $serial > /var/www/onion/serial
+sudo chmod 666 /var/www/onion/*.txt
+sudo chown -R www-data:www-data /var/www/onion
+
 
 #home directory files
 cp -r $HOME/bitseed-web-ui-2/.hdd/*  $HOME
@@ -37,12 +49,17 @@ sudo chmod 666 $HOME/bconf
 sudo chmod 666 $HOME/wr_bconf_mbox
 sudo chmod 666 $HOME/rd_bconf_mbox
 sudo chmod 666 $HOME/restartflag
-sudo chmod 666 $HOME/.bitcoin/bitcoin.conf
+
 mkdir $HOME/.bitseed
 sudo cp $HOME/bitseed-web-ui-2/.hdd/bitseed.conf $HOME/.bitseed
+sudo chown -R $USER:$USER $HOME/.bitcoin
+sudo chmod 666 $HOME/.bitcoin/
 sudo echo "301" > $HOME/version
 sudo /etc/init.d/apache2 restart
 echo "web admin install done" > $HOME/bitseed-web-ui-2/setup/setup.log
+
+#cron setup
+
 
 #Tor setup
 sudo apt-get install -y tor
