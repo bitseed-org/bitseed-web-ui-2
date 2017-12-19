@@ -16,6 +16,7 @@ do
   x=$(pgrep -f bitcoind)
 done
 echo "bitcoin has stopped. shutdown in 5 seconds"
+echo "(date) bitcoind stopped via safestop.sh" >> $HOME/.bitseed/bitseed.log
 sleep 10s
 sudo shutdown -h now
 fi
