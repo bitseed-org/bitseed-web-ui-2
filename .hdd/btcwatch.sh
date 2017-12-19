@@ -48,5 +48,4 @@ if [ "$x" == "" ]; then
 else
  echo "already running PID:"$x
  echo "wait 15 min then check block status"
- fi
 fi
