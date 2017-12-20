@@ -4,7 +4,16 @@
 
 #dependencies
 sudo apt-get update
-sudo apt-get -y install apache2 libapache2-mod-php php-mysql php-curl php-mcrypt dnsutils ntp python
+sudo apt-get -y install apache2 libapache2-mod-php php-mysql php-curl php-mcrypt dnsutils ntp python rsync
+
+#OS settings
+#sudo hostname bitseed3
+#sudo rm /etc/hostname
+#sudo echo "bitseed3" >> /etc/hostname
+#sudo rm /etc/hosts
+#sudo cp $HOME/bitseed-web-ui-2/setup/hosts /etc/
+
+
 
 #set serial number
 echo "Enter device serial number:"
@@ -49,7 +58,6 @@ sudo chmod 666 $HOME/bconf
 sudo chmod 666 $HOME/wr_bconf_mbox
 sudo chmod 666 $HOME/rd_bconf_mbox
 sudo chmod 666 $HOME/restartflag
-
 mkdir $HOME/.bitseed
 sudo cp $HOME/bitseed-web-ui-2/.hdd/bitseed.conf $HOME/.bitseed
 sudo chown -R $USER:$USER $HOME/.bitcoin
@@ -60,6 +68,8 @@ echo "web admin install done" > $HOME/bitseed-web-ui-2/setup/setup.log
 
 #cron setup
 sudo mv $HOME/safestop.sh /root
+crontab $HOME/bitseed-web-ui-2/setup/cron
+sudo crontab $HOME/bitseed-web-ui-2/setup/rootcron
 
 
 
