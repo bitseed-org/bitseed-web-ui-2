@@ -21,19 +21,21 @@ read serial
 echo $serial > $HOME/"deviceid-$serial"
 
 #Apache config
-sudo cp $HOME/bitseed-web-ui-2/000-default.conf  /etc/apache2/sites-enabled/
-sudo cp  $HOME/bitseed-web-ui-2/ports.conf  /etc/apache2/
+sudo cp $HOME/bitseed-web-ui-2/setup/000-default.conf  /etc/apache2/sites-enabled/
+sudo cp $HOME/bitseed-web-ui-2/setup/ports.conf  /etc/apache2/
 #private control panel
 sudo cp -r $HOME/bitseed-web-ui-2/html/* /var/www/html
 sudo echo $serial > /var/www/html/serial
 sudo chmod 666 /var/www/html/*.txt
 sudo chown -R www-data:www-data /var/www/html
 #public page
+sudo mkdir /var/www/public
 sudo cp -r $HOME/bitseed-web-ui-2/public/* /var/www/public
 sudo echo $serial > /var/www/public/serial
 sudo chmod 666 /var/www/public/*.txt
 sudo chown -R www-data:www-data /var/www/public
 #onion page
+sudo mkdir /var/www/onion
 sudo cp -r $HOME/bitseed-web-ui-2/onion/* /var/www/onion
 sudo echo $serial > /var/www/onion/serial
 sudo chmod 666 /var/www/onion/*.txt
