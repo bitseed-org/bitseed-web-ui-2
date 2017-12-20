@@ -13,8 +13,6 @@ sudo apt-get -y install apache2 libapache2-mod-php php-mysql php-curl php-mcrypt
 #sudo rm /etc/hosts
 #sudo cp $HOME/bitseed-web-ui-2/setup/hosts /etc/
 
-
-
 #set serial number
 echo "Enter device serial number:"
 read serial
@@ -24,23 +22,24 @@ echo $serial > $HOME/"deviceid-$serial"
 sudo cp $HOME/bitseed-web-ui-2/setup/000-default.conf  /etc/apache2/sites-enabled/
 sudo cp $HOME/bitseed-web-ui-2/setup/ports.conf  /etc/apache2/
 #private control panel
+sudo rm -rf /var/www/html
+sudo mkdir /var/www/html
 sudo cp -r $HOME/bitseed-web-ui-2/html/* /var/www/html
 sudo echo $serial > /var/www/html/serial
-sudo chmod 666 /var/www/html/*.txt
+#sudo chmod 666 /var/www/html/*.txt
 sudo chown -R www-data:www-data /var/www/html
 #public page
 sudo mkdir /var/www/public
 sudo cp -r $HOME/bitseed-web-ui-2/public/* /var/www/public
 sudo echo $serial > /var/www/public/serial
-sudo chmod 666 /var/www/public/*.txt
+#sudo chmod 666 /var/www/public/*.txt
 sudo chown -R www-data:www-data /var/www/public
 #onion page
 sudo mkdir /var/www/onion
 sudo cp -r $HOME/bitseed-web-ui-2/onion/* /var/www/onion
 sudo echo $serial > /var/www/onion/serial
-sudo chmod 666 /var/www/onion/*.txt
+#sudo chmod 666 /var/www/onion/*.txt
 sudo chown -R www-data:www-data /var/www/onion
-
 
 #home directory files
 cp -r $HOME/bitseed-web-ui-2/.hdd/*  $HOME
@@ -84,7 +83,6 @@ chmod 755 bitcoin-cli
 sudo mv $HOME/safestop.sh /root
 crontab $HOME/bitseed-web-ui-2/setup/cron
 sudo crontab $HOME/bitseed-web-ui-2/setup/rootcron
-
 
 #Tor setup
 sudo apt-get install -y tor
