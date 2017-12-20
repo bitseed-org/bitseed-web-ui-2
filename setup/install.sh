@@ -60,10 +60,12 @@ sudo chmod 666 $HOME/bconf
 sudo chmod 666 $HOME/wr_bconf_mbox
 sudo chmod 666 $HOME/rd_bconf_mbox
 sudo chmod 666 $HOME/restartflag
-mkdir $HOME/.bitseed
-sudo cp $HOME/bitseed-web-ui-2/.hdd/bitseed.conf $HOME/.bitseed
+sudo mkdir $HOME/.bitseed
+sudo cp $HOME/bitseed-web-ui-2/.hdd/.bitseed/bitseed.conf $HOME/.bitseed
+sudo chown -R $USER:$USER $HOME/.bitseed
+sudo chmod 666 $HOME/.bitseed
 sudo chown -R $USER:$USER $HOME/.bitcoin
-sudo chmod 666 $HOME/.bitcoin/
+sudo chmod 666 $HOME/.bitcoin
 sudo echo "301" > $HOME/version
 sudo /etc/init.d/apache2 restart
 echo "web admin install done" > $HOME/bitseed-web-ui-2/setup/setup.log
