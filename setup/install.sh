@@ -63,9 +63,9 @@ sudo chmod 666 $HOME/restartflag
 sudo mkdir $HOME/.bitseed
 sudo cp $HOME/bitseed-web-ui-2/.hdd/.bitseed/bitseed.conf $HOME/.bitseed
 sudo chown -R $USER:$USER $HOME/.bitseed
-sudo chmod 666 $HOME/.bitseed
+sudo chmod 766 $HOME/.bitseed
 sudo chown -R $USER:$USER $HOME/.bitcoin
-sudo chmod 666 $HOME/.bitcoin
+sudo chmod 766 $HOME/.bitcoin
 sudo echo "301" > $HOME/version
 sudo chown $USER:$USER *
 sudo /etc/init.d/apache2 restart
