@@ -67,6 +67,7 @@ sudo chmod 666 $HOME/.bitseed
 sudo chown -R $USER:$USER $HOME/.bitcoin
 sudo chmod 666 $HOME/.bitcoin
 sudo echo "301" > $HOME/version
+sudo chown $USER:$USER *
 sudo /etc/init.d/apache2 restart
 echo "web admin install done" > $HOME/bitseed-web-ui-2/setup/setup.log
 
