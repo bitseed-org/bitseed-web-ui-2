@@ -71,11 +71,19 @@ sudo chown $USER:$USER *
 sudo /etc/init.d/apache2 restart
 echo "web admin install done" > $HOME/bitseed-web-ui-2/setup/setup.log
 
+#bitcoin core
+https://bitcoincore.org/bin/bitcoin-core-0.15.1/bitcoin-0.15.1-x86_64-linux-gnu.tar.gz
+tar -xvf bitcoin-0.15.1-x86_64-linux-gnu.tar.gz
+cp $HOME/bitcoin-0.15.1/bin/bitcoind ~
+cp $HOME/bitcoin-0.15.1/bin/bitcoin-cli ~
+rm bitcoin-0.15.1-x86_64-linux-gnu.tar.gz
+chmod 755 bitcoind
+chmod 755 bitcoin-cli
+
 #cron setup
 sudo mv $HOME/safestop.sh /root
 crontab $HOME/bitseed-web-ui-2/setup/cron
 sudo crontab $HOME/bitseed-web-ui-2/setup/rootcron
-
 
 
 #Tor setup
