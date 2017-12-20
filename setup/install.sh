@@ -96,4 +96,7 @@ sudo usermod -a -G debian-tor $USER
 sudo service tor restart
 sleep 5
 sudo cat /var/lib/tor/bitseed-service/hostname
+sudo cat /var/lib/tor/bitseed-service/hostname > $HOME/onion
+echo "4" > $HOME/restartflag
 echo "setup done.  reboot"
+#sudo reboot
