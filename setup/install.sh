@@ -59,6 +59,8 @@ sudo /etc/init.d/apache2 restart
 echo "web admin install done" > $HOME/bitseed-web-ui-2/setup/setup.log
 
 #cron setup
+sudo mv $HOME/safestop.sh /root
+
 
 
 #Tor setup
