@@ -71,8 +71,9 @@ Originally forked from https://gitub.com mpatterson99/phpBitAdmin-Bitcoin-HTML5-
 					    <label rel="tootip" title=<?php echo $upnp_tt_content; ?> for="upnp_id">UPnP Enable</label>
 
 					    <!-- Disable Blockchain Backups checkbox -->
-					    <input type="checkbox" name="bitcoin_conf_chkbox[]" id="disablebackups_id" value="disablebackups" <?php echo $backupflag_checked; ?> />
-					    <label rel="tootip" title=<?php echo $disablebackups_tt_content; ?> for="disablebackups_id">Blockchain Backup Enable</label>
+                                            <!--  REMOVED 12/20/2017 -->
+					    <!-- <input type="checkbox" name="bitcoin_conf_chkbox[]" id="disablebackups_id" value="disablebackups" <?php // echo $backupflag_checked; ?> /> -->
+					    <!-- <label rel="tootip" title=<?php // echo $disablebackups_tt_content; ?> for="disablebackups_id">Blockchain Backup Enable</label> -->
 
 				    </div>
 

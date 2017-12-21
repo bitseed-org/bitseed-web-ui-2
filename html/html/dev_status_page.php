@@ -85,12 +85,12 @@ NOTE:  The Device status is only shown on the internal network.
            </div>
         </div>
 
-        <div class="div_WalletOverview">
+<!--        <div class="div_WalletOverview">
            <div class="ui-grid-a">
               <div class="ui-block-a"><span class="primary">Last blockchain Backup:</span></div>
               <div class="ui-block-b"><span class="secondary_light"><?php print $inet_mac_addr['db_date']; ?>&nbsp;</span></div>
            </div>
-        </div>
+        </div> -->
 
 		
 	 </div><!-- /content  -->
