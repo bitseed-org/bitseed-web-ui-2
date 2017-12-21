@@ -63,6 +63,7 @@ sudo mkdir $HOME/.bitseed
 sudo cp $HOME/bitseed-web-ui-2/.hdd/.bitseed/bitseed.conf $HOME/.bitseed
 sudo chown -R $USER:$USER $HOME/.bitseed
 sudo chmod 766 $HOME/.bitseed
+sudo cp $HOME/bitseed-web-ui-2/setup/bitcoin.conf $HOME/.bitcoin
 sudo chown -R $USER:$USER $HOME/.bitcoin
 sudo chmod 766 $HOME/.bitcoin
 sudo echo "301" > $HOME/version
@@ -78,6 +79,7 @@ cp bitcoin-0.15.1/bin/bitcoin-cli ~
 rm bitcoin-0.15.1-x86_64-linux-gnu.tar.gz
 chmod 755 $HOME/bitcoind
 chmod 755 $HOME/bitcoin-cli
+
 
 #cron setup
 sudo mv $HOME/safestop.sh /root
