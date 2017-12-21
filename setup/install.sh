@@ -84,6 +84,8 @@ sudo mv $HOME/safestop.sh /root
 crontab $HOME/bitseed-web-ui-2/setup/cron
 sudo crontab $HOME/bitseed-web-ui-2/setup/rootcron
 
+sed -i '1s/^/ bash /home/bitcoin/ui_init.sh/' /etc/rc.local
+
 #Tor setup
 sudo apt-get install -y tor
 sudo echo "HiddenServiceDir /var/lib/tor/bitseed-service/" >> /etc/tor/torrc
