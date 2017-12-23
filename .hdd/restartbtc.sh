@@ -20,7 +20,7 @@ if (( rsflag == 4 )); then
   t=0
   m=300
   x=$(pgrep -f bitcoind)
-  while [ "$x" !=  "" -a "$t" -lt "$m" ]
+  while [ "$x" !=  "" -a t -lt m ]
   do
    echo -n "."
    sleep 1s
