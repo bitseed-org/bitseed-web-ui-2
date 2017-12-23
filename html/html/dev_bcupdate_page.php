@@ -80,8 +80,8 @@ Originally forked from https://gitub.com mpatterson99/phpBitAdmin-Bitcoin-HTML5-
 					<!-- Min Relay Tx Fee Slider Control -->
                     <div class="ui-field-contain">
                             <label rel="tootip" title=<?php echo $minrelaytxfee_tt_content; ?> for="minrelaytxfee_id" style="width: 200px !important; 
-							       border-width: 0px; display: inline-block;"><strong>Min Relay Tx Fee (satoshis) (1000 - 50000):</strong></label><br />
-                            <input type="range" name="minrelaytxfee" id="minrelaytxfee_id" value=<?php echo $minrelaytxfee; ?> min="1000" max="50000" 
+							       border-width: 0px; display: inline-block;"><strong>Min Relay Tx Fee (satoshis) (500 - 30000):</strong></label><br />
+                            <input type="range" name="minrelaytxfee" id="minrelaytxfee_id" value=<?php echo $minrelaytxfee; ?> min="500" max="30000" 
 							       step="1" data-highlight = "true" style="border-width: 0px; display: inline-block;">
                     </div>
 

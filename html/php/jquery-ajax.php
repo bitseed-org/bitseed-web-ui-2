@@ -17,6 +17,7 @@ if(!session_id()) session_start();
 $HOME = trim($_SESSION['HOME']);
 // $HOME = "/home/bitcoin";
 $domvalue = $_GET['id'];
+// echo "Hello" > /home/bitcoin/test
 
 // Bitcoin controls
 switch ($domvalue) {
