@@ -63,6 +63,7 @@ sudo mkdir $HOME/.bitseed
 sudo cp $HOME/bitseed-web-ui-2/.hdd/.bitseed/bitseed.conf $HOME/.bitseed
 sudo chown -R $USER:$USER $HOME/.bitseed
 sudo chmod 766 $HOME/.bitseed
+sudo cp $HOME/bitseed-web-ui-2/setup/bitcoin.conf $HOME/.bitcoin
 sudo chown -R $USER:$USER $HOME/.bitcoin
 sudo chmod 766 $HOME/.bitcoin
 sudo echo "301" > $HOME/version
@@ -71,18 +72,22 @@ sudo /etc/init.d/apache2 restart
 echo "web admin install done" > $HOME/bitseed-web-ui-2/setup/setup.log
 
 #bitcoin core
-https://bitcoincore.org/bin/bitcoin-core-0.15.1/bitcoin-0.15.1-x86_64-linux-gnu.tar.gz
+wget https://bitcoincore.org/bin/bitcoin-core-0.15.1/bitcoin-0.15.1-x86_64-linux-gnu.tar.gz
 tar -xvf bitcoin-0.15.1-x86_64-linux-gnu.tar.gz
-cp $HOME/bitcoin-0.15.1/bin/bitcoind ~
-cp $HOME/bitcoin-0.15.1/bin/bitcoin-cli ~
+cp bitcoin-0.15.1/bin/bitcoind ~
+cp bitcoin-0.15.1/bin/bitcoin-cli ~
 rm bitcoin-0.15.1-x86_64-linux-gnu.tar.gz
-chmod 755 bitcoind
-chmod 755 bitcoin-cli
+chmod 755 $HOME/bitcoind
+chmod 755 $HOME/bitcoin-cli
+
 
 #cron setup
 sudo mv $HOME/safestop.sh /root
 crontab $HOME/bitseed-web-ui-2/setup/cron
 sudo crontab $HOME/bitseed-web-ui-2/setup/rootcron
+sudo cp $HOME/bitseed-web-ui-2/rc.local /etc/rc.local
+
+#sed -i '1s/^/ bash /home/bitcoin/ui_init.sh/' /etc/rc.local
 
 #Tor setup
 sudo apt-get install -y tor

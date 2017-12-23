@@ -10,7 +10,7 @@
 #          lin_rd_launch.py is launched every 5 seconds. 
 # -------------------------------------------------------------------------------------
 
-while (sleep 5 && ./lin_rd_launch.py) &
+while (sleep 10 && ./lin_rd_launch.py) &
 do
  wait $!
 done
