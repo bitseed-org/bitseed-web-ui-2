@@ -83,7 +83,7 @@ chmod 755 $HOME/bitcoin-cli
 
 #cron setup
 sudo mv $HOME/safestop.sh /root
-crontab $HOME/bitseed-web-ui-2/setup/cron
+sudo -u $USER crontab $HOME/bitseed-web-ui-2/setup/cron
 sudo crontab $HOME/bitseed-web-ui-2/setup/rootcron
 sudo cp $HOME/bitseed-web-ui-2/rc.local /etc/rc.local
 
