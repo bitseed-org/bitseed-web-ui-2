@@ -100,6 +100,9 @@ sudo service tor restart
 sleep 5
 sudo cat /var/lib/tor/bitseed-service/hostname
 sudo cat /var/lib/tor/bitseed-service/hostname > $HOME/onion
+
+#finish
+sudo chown -R $USER:$USER $HOME
 echo "4" > $HOME/restartflag
 echo "setup done.  reboot"
 #sudo reboot
