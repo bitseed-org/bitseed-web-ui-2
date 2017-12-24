@@ -26,20 +26,23 @@ def ip_mac():
     inet_address = temp[0]
 
     # Date of last backup
-    command = "cat " + homedir + "bak.log"
-    proc = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True)
-    (out, err) = proc.communicate()
-    s = out.split("\n")
-    s.pop()
-    s = s[-1]
-    if s == 'new':
-        db_date = "new"
-    else:
-        db_date = s.split(" ")
-        db_date = " ".join(db_date[3:])
+   # command = "cat " + homedir + "bak.log"
+   # proc = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True)
+   # (out, err) = proc.communicate()
+   # s = out.split("\n")
+   # s.pop()
+   # s = s[-1]
+   # if s == 'new':
+     #   db_date = "new"
+   # else:
+      #  db_date = s.split(" ")
+      #  db_date = " ".join(db_date[3:])
 
-    return_values = {"inet_address": inet_address, "mac_address": mac_address,
-                         "db_date": db_date}
+    #return_values = {"inet_address": inet_address, "mac_address": mac_address,
+       #                  "db_date": db_date}
+    
+    return_values = {"inet_address": inet_address, "mac_address": mac_address}
+    
     json_values = json.dumps(return_values)
     return json_values
 
