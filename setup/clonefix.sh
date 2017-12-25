@@ -16,6 +16,11 @@ echo $serial > $HOME/"deviceid-$serial"
 echo $serial > /var/www/html/serial
 echo $serial > /var/www/onion/serial
 
+#Patches
+rm $HOME/btcwatch.sh
+wget https://raw.githubusercontent.com/bitseed-org/bitseed-web-ui-2/master/.hdd/btcwatch.sh
+chown $USER:USER $HOME/btcwatch.sh
+chmod 755 $HOME/btcwatch.sh
 
 #finish
 sudo cat /var/lib/tor/bitseed-service/hostname
