@@ -15,3 +15,12 @@ read serial
 echo $serial > $HOME/"deviceid-$serial"
 echo $serial > /var/www/html/serial
 echo $serial > /var/www/onion/serial
+
+
+#finish
+sudo cat /var/lib/tor/bitseed-service/hostname
+echo /var/www/html/serial
+echo "Enter reboot:"
+read temp
+echo "4" > $HOME/restartflag
+sudo reboot
