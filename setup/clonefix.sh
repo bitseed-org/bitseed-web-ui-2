@@ -23,8 +23,12 @@ sudo -u $USER wget https://raw.githubusercontent.com/bitseed-org/bitseed-web-ui-
 #update bitcoin.conf
 rm $HOME/.bitcoin/bitcoin.conf
 sudo -u $USER wget https://raw.githubusercontent.com/bitseed-org/bitseed-web-ui-2/master/setup/bitcoin.conf
-mv $HOME/bitcoin.conf $HOME/.bitcoin/bitcoin.conf
+mv bitcoin.conf $HOME/.bitcoin/bitcoin.conf
 chmod 666 $HOME/.bitcoin/bitcoin.conf
+#update disk-info.py
+sudo rm /var/www/html/python/disk-info.py
+sudo -u www-data wget https://raw.githubusercontent.com/bitseed-org/bitseed-web-ui-2/master/html/python/disk-info.py
+sudo mv disk-info.py /var/www/html/python
 
 #finish
 sudo cat /var/lib/tor/bitseed-service/hostname
