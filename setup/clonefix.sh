@@ -17,10 +17,14 @@ echo $serial > /var/www/html/serial
 echo $serial > /var/www/onion/serial
 
 #Patches
+#update btcwatch
 rm $HOME/btcwatch.sh
-wget https://raw.githubusercontent.com/bitseed-org/bitseed-web-ui-2/master/.hdd/btcwatch.sh
-chown $USER:USER $HOME/btcwatch.sh
-chmod 755 $HOME/btcwatch.sh
+sudo -u $USER wget https://raw.githubusercontent.com/bitseed-org/bitseed-web-ui-2/master/.hdd/btcwatch.sh
+#update bitcoin.conf
+rm $HOME/.bitcoin/bitcoin.conf
+sudo -u $USER wget https://raw.githubusercontent.com/bitseed-org/bitseed-web-ui-2/master/setup/bitcoin.conf
+mv $HOME/bitcoin.conf $HOME/.bitcoin/bitcoin.conf
+chmod 666 $HOME/.bitcoin/bitcoin.conf
 
 #finish
 sudo cat /var/lib/tor/bitseed-service/hostname
