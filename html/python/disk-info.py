@@ -44,7 +44,7 @@ def disk_status():
     proc = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True)
     (out, err) = proc.communicate()
     s = out.split("\n")
-    words = s[2].split()
+    words = s[1].split()
     ram_used = words[2] + " MB"
     ram_free = words[3] + " MB"
     # ----------------------------------------------------------------------
