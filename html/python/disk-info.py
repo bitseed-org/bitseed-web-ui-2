@@ -46,7 +46,7 @@ def disk_status():
     s = out.split("\n")
     words = s[1].split()
     ram_used = words[2] + " MB"
-    ram_free = words[3] + " MB"
+    ram_free = words[5] + " MB"
     # ----------------------------------------------------------------------
 
     # CPU Load (1, 5, 15 minute averages)
