@@ -18,3 +18,9 @@ sudo mkdir /home/bitcoin/temp
 sudo mount /dev/sdc1 /home/bitcoin/temp
 sudo chown -R bitcoin:bitcoin /home/bitcoin/temp
 bash /home/bitcoin/temp/importchain.sh
+
+#change host name
+sudo hostname bitseed3
+sudo rm /etc/hostname
+sudo echo "bitseed3" >> /etc/hostname
+sudo sed -i "s/ubuntu/bitseed3/g" /etc/hosts
