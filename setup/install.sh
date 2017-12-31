@@ -1,6 +1,7 @@
 #!/bin/bash
 #install Bitseed V3 GUI for Bitcoin Core bitcoind
 #Ubuntu 16 supported
+COIN="bitcoin"
 
 #set serial number
 echo "Enter device serial number:"
@@ -102,7 +103,7 @@ sudo cat /var/lib/tor/bitseed-service/hostname
 sudo cat /var/lib/tor/bitseed-service/hostname > $HOME/onion
 
 #finish
-sudo chown -R $USER:$USER $HOME
+sudo chown -R $COIN:$COIN $HOME
 echo "4" > $HOME/restartflag
 echo "setup done.  reboot"
 #sudo reboot
