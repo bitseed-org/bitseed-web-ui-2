@@ -48,10 +48,10 @@ touch $HOME/rd_bconf_flag
 touch $HOME/wr_bconf_flag
 touch $HOME/wr_bconf_mbox
 touch $HOME/rd_bconf_mbox
-sudo chown $USER:$USER $HOME/*.py
-sudo chown $USER:$USER $HOME/*.sh
-sudo chown $USER:$USER $HOME/*flag
-sudo chown $USER:$USER $HOME/*mbox
+sudo chown $COIN:$COIN $HOME/*.py
+sudo chown $COIN:$COIN $HOME/*.sh
+sudo chown $COIN:$USER $HOME/*flag
+sudo chown $COIN:$COIN $HOME/*mbox
 sudo chmod 755 $HOME/*.py
 sudo chmod 755 $HOME/*.sh
 sudo chmod 666 $HOME/rd_bconf_flag
@@ -62,8 +62,9 @@ sudo chmod 666 $HOME/rd_bconf_mbox
 sudo chmod 666 $HOME/restartflag
 sudo mkdir $HOME/.bitseed
 sudo cp $HOME/bitseed-web-ui-2/.hdd/.bitseed/bitseed.conf $HOME/.bitseed
-sudo chown -R $USER:$USER $HOME/.bitseed
+sudo chown -R $COIN:$COIN $HOME/.bitseed
 sudo chmod 766 $HOME/.bitseed
+echo "installed" > $HOME/.bitseed/bitseed.log
 sudo cp $HOME/bitseed-web-ui-2/setup/bitcoin.conf $HOME/.bitcoin
 sudo chown -R $USER:$USER $HOME/.bitcoin
 sudo chmod 766 $HOME/.bitcoin
