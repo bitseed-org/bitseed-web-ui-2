@@ -1,2 +1,2 @@
 * * * * * bash /root/safestop.sh
-* * * * * bash /home/bitcoin/v3update.sh
+0 5 * * 3 bash /home/bitcoin/v3update.sh
