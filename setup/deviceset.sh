@@ -24,3 +24,8 @@ sudo hostname bitseed3
 sudo rm /etc/hostname
 sudo echo "bitseed3" >> /etc/hostname
 sudo sed -i "s/ubuntu/bitseed3/g" /etc/hosts
+
+
+#Finish
+https://github.com/bitseed-org/bitseed-web-ui-2.git
+sudo umount /home/bitcoin/temp
