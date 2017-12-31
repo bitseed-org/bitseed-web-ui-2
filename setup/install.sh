@@ -83,10 +83,10 @@ chmod 755 $HOME/bitcoin-cli
 
 
 #cron setup
-sudo mv $HOME/safestop.sh /root
-sudo -u $USER crontab $HOME/bitseed-web-ui-2/setup/cron
-sudo crontab $HOME/bitseed-web-ui-2/setup/rootcron
-sudo cp $HOME/bitseed-web-ui-2/rc.local /etc/rc.local
+sudo mv $COIN/safestop.sh /root
+sudo -u $COIN crontab $HOME/bitseed-web-ui-2/setup/cron
+sudo crontab $COIN/bitseed-web-ui-2/setup/rootcron
+sudo cp $COIN/bitseed-web-ui-2/rc.local /etc/rc.local
 
 #sed -i '1s/^/ bash /home/bitcoin/ui_init.sh/' /etc/rc.local
 
@@ -96,7 +96,7 @@ sudo echo "HiddenServiceDir /var/lib/tor/bitseed-service/" >> /etc/tor/torrc
 sudo echo "HiddenServicePort 80 127.0.0.1:82" >> /etc/tor/torrc
 sudo echo "ControlPort 9051" >> /etc/tor/torrc
 sudo echo "CookieAuthentication 1" >> /etc/tor/torrc
-sudo usermod -a -G debian-tor $USER 
+sudo usermod -a -G debian-tor $COIN
 sudo service tor restart
 sleep 5
 sudo cat /var/lib/tor/bitseed-service/hostname
