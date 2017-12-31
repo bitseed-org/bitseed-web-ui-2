@@ -11,6 +11,7 @@ echo 'bitcoin:bitcoin' | sudo chpasswd
 sudo usermod -aG sudo bitcoin
 sudo su bitcoin
 cd $HOME
+sudo userdel -r oem
 
 #copy blockchain
 sudo mkdir /home/bitcoin/temp
