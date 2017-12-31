@@ -11,6 +11,8 @@ echo $serial > $HOME/"deviceid-$serial"
 #dependencies
 sudo apt-get update
 sudo apt-get -y install apache2 libapache2-mod-php php-mysql php-curl php-mcrypt dnsutils ntp python rsync
+sudo apt-get install unattended-upgrades
+
 
 #OS settings
 #sudo hostname bitseed3
