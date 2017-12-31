@@ -2,6 +2,11 @@
 #install Bitseed V3 GUI for Bitcoin Core bitcoind
 #Ubuntu 16 supported
 
+#set serial number
+echo "Enter device serial number:"
+read serial
+echo $serial > $HOME/"deviceid-$serial"
+
 #dependencies
 sudo apt-get update
 sudo apt-get -y install apache2 libapache2-mod-php php-mysql php-curl php-mcrypt dnsutils ntp python rsync
@@ -12,11 +17,6 @@ sudo apt-get -y install apache2 libapache2-mod-php php-mysql php-curl php-mcrypt
 #sudo echo "bitseed3" >> /etc/hostname
 #sudo rm /etc/hosts
 #sudo cp $HOME/bitseed-web-ui-2/setup/hosts /etc/
-
-#set serial number
-echo "Enter device serial number:"
-read serial
-echo $serial > $HOME/"deviceid-$serial"
 
 #Apache config
 sudo cp $HOME/bitseed-web-ui-2/setup/000-default.conf  /etc/apache2/sites-enabled/
