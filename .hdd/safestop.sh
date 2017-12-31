@@ -18,5 +18,6 @@ done
 echo "bitcoin has stopped. shutdown in 5 seconds"
 echo "(date) bitcoind stopped via safestop.sh" >> /home/bitcoin/.bitseed/bitseed.log
 sleep 10s
+echo 4 > /home/bitcoin/restartflag
 sudo shutdown -h now
 fi
