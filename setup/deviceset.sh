@@ -10,8 +10,10 @@ sudo adduser --quiet --disabled-password --shell /bin/bash --home /home/bitcoin 
 echo 'bitcoin:bitcoin' | sudo chpasswd
 sudo usermod -aG sudo bitcoin
 sudo su bitcoin
-cd $HOME
+cd /home/bitcoin
+sudo pkill -KILL -u oem
 sudo userdel -r oem
+
 
 #copy blockchain
 sudo mkdir /home/bitcoin/temp
