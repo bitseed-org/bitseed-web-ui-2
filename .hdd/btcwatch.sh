@@ -18,7 +18,7 @@ fi
 d=$(date +%s)
 echo "$d"
 if [ "$d" -lt "1422748800" ]; then
-  echo "system date is incorrect, aborted startup" >> $HOME/cron.log
+  echo "system date is incorrect, aborted startup" >> $HOME/.bitseed/bitseed.log
   exit 0
 fi
 echo "system date is > 2015-02-01, script will continue"
@@ -36,7 +36,7 @@ if [ "$x" == "" ]; then
   echo "PID:"$x
   if [ "$x" == "" ]; then
     #if bitcoind did not start properly
-    echo "start failed, $(date)" >> $HOME/cron.log
+    echo "start failed, $(date)" >> $HOME/.bitseed/bitseed.log
     echo "start failed"
     sleep 1m
     echo "try again to start btc 1m after fail to run"
@@ -44,7 +44,7 @@ if [ "$x" == "" ]; then
     exit
   else
     echo "restart success"
-    echo "btc restarted $(date)" >> $HOME/cron.log
+    echo "btc restarted $(date)" >> $HOME/.bitseed/bitseed.log
   fi
 else
  echo "already running PID:"$x
