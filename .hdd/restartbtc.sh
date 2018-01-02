@@ -1,5 +1,8 @@
 #!/bin/bash
 #stops and starts bitcoind when restartflag file is set to 1
+# flag=4 starts bitcoind
+# flag=1 stops bitcoind and then restarts it after it has stopped.   if bitcoind will not stop within 300s, kill it
+# flag=2 is watched by /root/safestop.sh which is same as flag=1 and then executes a shutown 
 #does nothing in all other cases
 #intended to be run every minute by cronttab:
 #* * * * * bash $HOME/restartbtc.sh
