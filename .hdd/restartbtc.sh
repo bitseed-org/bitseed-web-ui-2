@@ -18,7 +18,7 @@ if (( rsflag == 4 )); then
  if (( rsflag == 1 )); then
   echo "restarting bitcoind, please wait"
   echo 0 > $HOME/restartflag
-  $HOME/bitcoin-cli stop
+  bitcoin-cli stop
   echo "Do not shut down the device until notified"
   t=0
   m=300
@@ -34,7 +34,7 @@ if (( rsflag == 4 )); then
   echo "bitcoin has stopped. restart in 5 seconds"
   sleep 10s
   echo "starting bitcoind, pleese wait 15 min"
-  $HOME/bitcoind -daemon
-echo "bitcoind restarted (date)" >> $HOME/cron.log
+  bitcoind -daemon
+echo "bitcoind restarted $(date)" >> $HOME/.bitseed/bitseed.log
 fi
 fi
