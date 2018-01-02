@@ -1,5 +1,5 @@
 #!/bin/bash
-$HOME/bitcoin-cli -datadir=$HOME/.bitcoin stop
+bitcoin-cli -datadir=$HOME/.bitcoin stop
 echo "Do not shut down the device until notified"
 x=$(pgrep -f bitcoind)
 while [ "$x" !=  "" ]
