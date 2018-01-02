@@ -15,9 +15,9 @@ sudo apt-get install unattended-upgrades
 
 
 #OS settings
-#sudo hostname bitseed3
-#sudo rm /etc/hostname
-#sudo echo "bitseed3" >> /etc/hostname
+sudo hostname bitseed3
+sudo rm /etc/hostname
+sudo echo "bitseed3" >> /etc/hostname
 #sudo rm /etc/hosts
 #sudo cp $HOME/bitseed-web-ui-2/setup/hosts /etc/
 
