@@ -28,7 +28,7 @@ x=$(pgrep -f bitcoind)
 if [ "$x" == "" ]; then
   #if bitcoind not running then start it
   echo "start btc"
-  ./bitcoind -daemon
+  bitcoind -daemon
   ./ui_init.sh
   echo "wait 15 min and check if running"
   sleep 15m
@@ -40,7 +40,7 @@ if [ "$x" == "" ]; then
     echo "start failed"
     sleep 1m
     echo "try again to start btc 1m after fail to run"
-    ./bitcoind -daemon
+    bitcoind -daemon
     exit
   else
     echo "restart success"
