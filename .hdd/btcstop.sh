@@ -8,5 +8,5 @@ do
   sleep 1s
   x=$(pgrep -f bitcoind)
 done
-echo "bitcoind shut down (date)" >> $HOME/.bitseed/bitseed.log
+echo "bitcoind shut down $(date)" >> $HOME/.bitseed/bitseed.log
 echo "bitcoin has stopped.  OK to shutdown"
