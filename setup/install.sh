@@ -9,9 +9,12 @@ read serial
 echo $serial > $HOME/"deviceid-$serial"
 
 #dependencies
+#bitcoind is installed from Ubuntu Launchpad reso
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D46F45428842CE5E
 sudo apt-get update
 sudo apt-get -y install apache2 libapache2-mod-php php-mysql php-curl php-mcrypt dnsutils ntp python rsync
 sudo apt-get install unattended-upgrades
+sudo apt-get install bitcoind
 
 
 #OS settings
@@ -76,13 +79,13 @@ sudo /etc/init.d/apache2 restart
 echo "web admin install done" > $HOME/bitseed-web-ui-2/setup/setup.log
 
 #bitcoin core
-wget https://bitcoincore.org/bin/bitcoin-core-0.15.1/bitcoin-0.15.1-x86_64-linux-gnu.tar.gz
-tar -xvf bitcoin-0.15.1-x86_64-linux-gnu.tar.gz
-cp bitcoin-0.15.1/bin/bitcoind ~
-cp bitcoin-0.15.1/bin/bitcoin-cli ~
-rm bitcoin-0.15.1-x86_64-linux-gnu.tar.gz
-chmod 755 $HOME/bitcoind
-chmod 755 $HOME/bitcoin-cli
+#wget https://bitcoincore.org/bin/bitcoin-core-0.15.1/bitcoin-0.15.1-x86_64-linux-gnu.tar.gz
+#tar -xvf bitcoin-0.15.1-x86_64-linux-gnu.tar.gz
+#cp bitcoin-0.15.1/bin/bitcoind ~
+#cp bitcoin-0.15.1/bin/bitcoin-cli ~
+#rm bitcoin-0.15.1-x86_64-linux-gnu.tar.gz
+#chmod 755 $HOME/bitcoind
+#chmod 755 $HOME/bitcoin-cli
 
 
 #cron setup
