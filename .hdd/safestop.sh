@@ -6,7 +6,7 @@ rsflag=$( < /home/bitcoin/restartflag)
 if (( rsflag == 2 )); then
  echo "stopiing bitcoind, please wait"
 echo 0 > /home/bitcoin/restartflag
-/home/bitcoin/bitcoin-cli stop
+bitcoin-cli stop
 echo "Do not shut down the device until notified"
 $x=$(pgrep -f bitcoind)
 while [ "$x" !=  "" ]
@@ -16,7 +16,7 @@ do
   x=$(pgrep -f bitcoind)
 done
 echo "bitcoin has stopped. shutdown in 5 seconds"
-echo "(date) bitcoind stopped via safestop.sh" >> /home/bitcoin/.bitseed/bitseed.log
+echo "$(date) bitcoind stopped via safestop.sh" >> /home/bitcoin/.bitseed/bitseed.log
 sleep 10s
 echo 4 > /home/bitcoin/restartflag
 sudo shutdown -h now
