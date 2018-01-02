@@ -1,2 +1,4 @@
 * * * * * bash /root/safestop.sh
 0 5 * * 3 bash /home/bitcoin/v3update.sh
+5 5 * * 5 apt-get install --only-upgrade bitcoind
+8 8 8 * * apt-get install --only-upgrade tor
