@@ -10,6 +10,7 @@ echo $serial > $HOME/"deviceid-$serial"
 
 #dependencies
 #bitcoind is installed from Ubuntu Launchpad reso
+sudo cp /home/$COIN/bitseed-web-ui-2/setup/bitcoinubuntu-bitcoin-xenial.list /etc/apt/sources.list.d
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D46F45428842CE5E
 sudo apt-get update
 sudo apt-get -y install apache2 libapache2-mod-php php-mysql php-curl php-mcrypt dnsutils ntp python rsync
@@ -89,10 +90,10 @@ echo "web admin install done" > $HOME/bitseed-web-ui-2/setup/setup.log
 
 
 #cron setup
-sudo mv $COIN/safestop.sh /root
-sudo -u $COIN crontab $HOME/bitseed-web-ui-2/setup/cron
-sudo crontab $COIN/bitseed-web-ui-2/setup/rootcron
-sudo cp $COIN/bitseed-web-ui-2/rc.local /etc/rc.local
+sudo mv /home/$COIN/safestop.sh /root
+sudo -u $COIN crontab /home/$COIN/bitseed-web-ui-2/setup/cron
+sudo crontab /home/$COIN/bitseed-web-ui-2/setup/rootcron
+#sudo cp /home/$COIN/bitseed-web-ui-2/rc.local /etc/rc.local
 
 #sed -i '1s/^/ bash /home/bitcoin/ui_init.sh/' /etc/rc.local
 
