@@ -14,8 +14,8 @@ sudo cp /home/$COIN/bitseed-web-ui-2/setup/bitcoinubuntu-bitcoin-xenial.list /et
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D46F45428842CE5E
 sudo apt-get update
 sudo apt-get -y install apache2 libapache2-mod-php php-mysql php-curl php-mcrypt dnsutils ntp python rsync
-sudo apt-get install unattended-upgrades
-sudo apt-get install bitcoind
+sudo apt-get install -y unattended-upgrades
+sudo apt-get install -y bitcoind
 
 
 #OS settings
