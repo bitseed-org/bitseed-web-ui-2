@@ -3,7 +3,7 @@
 #run as root
 
 #ssh access
-sudo apt-get install openssh-server
+#sudo apt-get install openssh-server
 
 #change host name
 sudo hostname bitseed3
