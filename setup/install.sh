@@ -12,6 +12,10 @@ echo $serial > $HOME/"deviceid-$serial"
 echo "importing blockchain.  wait aboutn 1 hour
 rsync -r --info=progress2 storage@10.1.10.121:/home/storage/disk3/.bitcoin /home/bitcoin
 
+#remove default user
+sudo pkill -KILL -u oem
+sudo userdel -r oem
+
 #dependencies
 #bitcoind is installed from Ubuntu Launchpad reso
 sudo cp /home/$COIN/bitseed-web-ui-2/setup/bitcoinubuntu-bitcoin-xenial.list /etc/apt/sources.list.d
