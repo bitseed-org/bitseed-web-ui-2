@@ -9,7 +9,7 @@ read serial
 echo $serial > $HOME/"deviceid-$serial"
 
 #import blockchain from network
-echo "importing blockchain.  wait aboutn 1 hour
+echo "importing blockchain.  wait aboutn 1 hour"
 #rsync -r --info=progress2 storage@10.1.10.121:/home/storage/disk3/.bitcoin /home/bitcoin
 rsync -r --info=progress2 storage@10.1.10.121:/home/storage/.bitcoin /home/bitcoin
 
