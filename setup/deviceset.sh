@@ -15,10 +15,10 @@ sudo sed -i "s/ubuntu/bitseed3/g" /etc/hosts
 sudo adduser --quiet --disabled-password --shell /bin/bash --home /home/bitcoin --gecos "User" bitcoin
 echo 'bitcoin:bitcoin' | sudo chpasswd
 sudo usermod -aG sudo bitcoin
-sudo su bitcoin
+#sudo su bitcoin
 sudo cd /home/bitcoin
-sudo pkill -KILL -u oem
-sudo userdel -r oem
+#sudo pkill -KILL -u oem
+#sudo userdel -r oem
 
 
 #copy blockchain
