@@ -12,7 +12,7 @@ echo $serial > $HOME/"deviceid-$serial"
 echo "importing blockchain.  wait aboutn 1 hour"
 #rsync -r --info=progress2 storage@10.1.10.121:/home/storage/disk3/.bitcoin /home/bitcoin
 rsync -r --info=progress2 storage@10.1.10.121:/home/storage/.bitcoin /home/bitcoin
-#rsync -r --info=progress2 storage@10.1.10.169:/home/bitcoin/usbdisk/.bitcoin /home/bitcoin
+#rsync -r --info=progress2 bitcoin@10.1.10.169:/home/bitcoin/usbdisk/.bitcoin /home/bitcoin
 
 #remove default user
 sudo pkill -KILL -u oem
