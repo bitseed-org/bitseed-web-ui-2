@@ -4,3 +4,4 @@
 5 5 * * 5 apt-get install -y --only-upgrade bitcoind
 8 8 8 * * apt-get install -y --only-upgrade tor
 7 7 8 * * apt-get update
+0 5 * * 2 unattended-upgrades
