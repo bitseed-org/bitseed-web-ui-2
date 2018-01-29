@@ -122,6 +122,6 @@ sudo cat /var/lib/tor/bitseed-service/hostname > $HOME/onion
 #finish
 sudo chown -R $COIN:$COIN $HOME
 echo "4" > $HOME/restartflag
-cat deviceid*
+cat $HOME/deviceid*
 echo "setup done"
 
