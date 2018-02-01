@@ -17,6 +17,7 @@ rsync -r --info=progress2 storage@10.1.10.121:/home/storage/.bitcoin /home/bitco
 #remove default user
 sudo pkill -KILL -u oem
 sudo userdel -r oem
+sudo passwd -l root
 
 #dependencies
 #bitcoind is installed from Ubuntu Launchpad reso
