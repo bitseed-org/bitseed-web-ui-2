@@ -8,7 +8,7 @@ if (( rsflag == 2 )); then
 echo 0 > /home/bitcoin/restartflag
 bitcoin-cli stop
 echo "Do not shut down the device until notified"
-$x=$(pgrep -f bitcoind)
+x=$(pgrep -f bitcoind)
 while [ "$x" !=  "" ]
 do
   echo -n "."
