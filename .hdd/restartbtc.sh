@@ -30,6 +30,7 @@ if (( rsflag == 4 )); then
    t=t+1
    x=$(pgrep -f bitcoind)
   done
+  sleep 5s
   kill -9 "$x"
   echo "bitcoin has stopped. restart in 5 seconds"
   sleep 10s
