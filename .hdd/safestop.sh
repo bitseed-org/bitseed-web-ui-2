@@ -6,7 +6,7 @@ rsflag=$( < /home/bitcoin/restartflag)
 if (( rsflag == 2 )); then
  echo "stopiing bitcoind, please wait"
 echo 0 > /home/bitcoin/restartflag
-bitcoin-cli stop
+bitcoin-cli -datadir=/home/bitcoin/.bitcoin stop
 echo "Do not shut down the device until notified"
 x=$(pgrep -f bitcoind)
 while [ "$x" !=  "" ]
