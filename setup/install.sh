@@ -110,6 +110,7 @@ sudo crontab /home/$COIN/bitseed-web-ui-2/setup/rootcron
 
 #Tor setup
 sudo apt-get install -y tor
+rm $HOME/.bitcoin/onion_private_key
 sudo echo "HiddenServiceDir /var/lib/tor/bitseed-service/" >> /etc/tor/torrc
 sudo echo "HiddenServicePort 80 127.0.0.1:82" >> /etc/tor/torrc
 sudo echo "ControlPort 9051" >> /etc/tor/torrc
