@@ -85,7 +85,7 @@ echo "installed" > $HOME/.bitseed/bitseed.log
 sudo cp $HOME/bitseed-web-ui-2/setup/bitcoin.conf $HOME/.bitcoin
 sudo chown -R $USER:$USER $HOME/.bitcoin
 sudo chmod 766 $HOME/.bitcoin
-sudo echo "301" > $HOME/version
+sudo echo "302" > $HOME/version
 sudo chown $USER:$USER *
 sudo /etc/init.d/apache2 restart
 echo "web admin install done" > $HOME/bitseed-web-ui-2/setup/setup.log
