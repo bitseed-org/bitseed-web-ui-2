@@ -30,7 +30,7 @@ def disk_status():
 
     # Disk drive -related logic
     #command = "df -h /dev/sda1"
-    command = "df -h /dev/mapper/bitseed3--vg-root
+    command = "df -h /dev/mapper/bitseed3--vg-root"
     proc = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True)
     (out, err) = proc.communicate()
     s = out.split("\n")
